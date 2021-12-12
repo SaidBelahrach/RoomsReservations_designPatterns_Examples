@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31911.196
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RoomReservation_designPatterns", "RoomReservation_designPatterns\RoomReservation_designPatterns.csproj", "{3B3ACE7A-3550-4EB7-B3B0-23C5416645C7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RoomReservation_designPatterns.Data", "RoomReservation_designPatterns.Data\RoomReservation_designPatterns.Data.csproj", "{F29BECBE-2C2E-49B9-9460-BFA058AA4813}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3B3ACE7A-3550-4EB7-B3B0-23C5416645C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3B3ACE7A-3550-4EB7-B3B0-23C5416645C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3B3ACE7A-3550-4EB7-B3B0-23C5416645C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3B3ACE7A-3550-4EB7-B3B0-23C5416645C7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F29BECBE-2C2E-49B9-9460-BFA058AA4813}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F29BECBE-2C2E-49B9-9460-BFA058AA4813}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F29BECBE-2C2E-49B9-9460-BFA058AA4813}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F29BECBE-2C2E-49B9-9460-BFA058AA4813}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {39801731-7183-42E7-9906-7DED024BCEE6}
+	EndGlobalSection
+EndGlobal
