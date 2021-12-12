@@ -6,4 +6,8 @@
     <UseWindowsForms>true</UseWindowsForms>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\RoomReservation_designPatterns.Data\RoomReservation_designPatterns.Data.csproj" />
+  </ItemGroup>
+
 </Project>

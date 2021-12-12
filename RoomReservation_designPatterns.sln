@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31911.196
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RoomReservation_designPatterns", "RoomReservation_designPatterns\RoomReservation_designPatterns.csproj", "{3B3ACE7A-3550-4EB7-B3B0-23C5416645C7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RoomReservation_designPatterns.Destop", "RoomReservation_designPatterns\RoomReservation_designPatterns.Destop.csproj", "{3B3ACE7A-3550-4EB7-B3B0-23C5416645C7}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RoomReservation_designPatterns.Data", "RoomReservation_designPatterns.Data\RoomReservation_designPatterns.Data.csproj", "{F29BECBE-2C2E-49B9-9460-BFA058AA4813}"
 EndProject

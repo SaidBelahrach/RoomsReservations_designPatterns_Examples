@@ -4,7 +4,7 @@ using System.Text;
 
 namespace RoomReservation_designPatterns.Data.DataAccess
 {
-    class RoomsData
+    public class RoomsData
     {
     }
 }

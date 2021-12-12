@@ -1,4 +1,4 @@
-﻿
+﻿using RoomReservation_designPatterns.Data.DataAccess;
 namespace RoomReservation_designPatterns
 {
     partial class Form1
@@ -6,6 +6,7 @@ namespace RoomReservation_designPatterns
         /// <summary>
         ///  Required designer variable.
         /// </summary>
+       
         private System.ComponentModel.IContainer components = null;
 
         /// <summary>
@@ -17,7 +18,7 @@ namespace RoomReservation_designPatterns
             if (disposing && (components != null))
             {
                 components.Dispose();
-            }
+            }  
             base.Dispose(disposing);
         }
 

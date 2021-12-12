@@ -4,7 +4,7 @@ using System.Text;
 
 namespace RoomReservation_designPatterns.Data.DataModels
 {
-    class Client
+    public class Client
     {
     }
 }
