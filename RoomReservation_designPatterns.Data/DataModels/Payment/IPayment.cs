@@ -4,7 +4,9 @@ using System.Text;
 
 namespace RoomReservation_designPatterns.Data.DataModels
 {
-    public class Client
+    public interface IPayment
     {
+
+        public bool pay(double amount);
     }
 }
