@@ -29,7 +29,9 @@ namespace RoomReservation_designPatterns.Data.DataModels
 
         public List<Room> getAvailableRooms()
         {
-            return rooms.Where(r => r.state.Equals("avai")).ToList();//to impl
+            // return rooms.Where(r => r.state.Equals("avai")).ToList();//to impl
+            return rooms;
+
         }
 
         public void Update(IObservable subject, string action)

@@ -30,13 +30,19 @@ namespace RoomReservation_designPatterns
 
         private void btn_book_Click(object sender, EventArgs e)
         {
-
+            reserver_form bookForm = new reserver_form();
+            bookForm.Show();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             Reservations myreser = new Reservations();
             myreser.Show();
+        }
+
+        private void panel1_Click(object sender, EventArgs e)
+        {
+            button1_Click(null, null);
         }
     }
 }
