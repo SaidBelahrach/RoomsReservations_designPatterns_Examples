@@ -11,6 +11,7 @@ namespace RoomReservation_designPatterns.Data.DataModels
         public List<Client> clients { get; set; }
 
         private static Hotel hotel= null;
+
         private Hotel()
         {
             clients = DataAccess.ClientData.allClients; //default values

@@ -23,6 +23,7 @@ namespace RoomReservation_designPatterns.Data.DataModels
         public bool book()
         {
             reservation.book();
+            payment_Stategy.pay(reservation.amount);
             return true;
         }
 
@@ -30,12 +31,6 @@ namespace RoomReservation_designPatterns.Data.DataModels
         {
             reservation.cancel();
             return true;
-        }
-        public bool pay()
-        {
-            payment_Stategy.pay(reservation.amount);
-            return true;
-        }
-
+        } 
     }
 }
