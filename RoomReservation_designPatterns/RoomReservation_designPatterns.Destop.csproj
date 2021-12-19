@@ -7,6 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\RoomReservation_designPatterns.Controllers\RoomReservation_designPatterns.Controllers.csproj" />
     <ProjectReference Include="..\RoomReservation_designPatterns.Data\RoomReservation_designPatterns.Data.csproj" />
   </ItemGroup>
 

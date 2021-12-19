@@ -99,12 +99,14 @@ namespace RoomReservation_designPatterns
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btn_book);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.img_book);
             this.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.DoubleBuffered = true;
             this.Name = "home_Form";
             this.Text = "Hotel";
             this.Load += new System.EventHandler(this.panel_home);

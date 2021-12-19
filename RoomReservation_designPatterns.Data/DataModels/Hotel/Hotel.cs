@@ -13,7 +13,7 @@ namespace RoomReservation_designPatterns.Data.DataModels
         private static Hotel hotel= null;
 
         private Hotel()
-        {
+        { 
             clients = DataAccess.ClientData.allClients; //default values
             rooms = DataAccess.RoomsData.allRooms;      //default values
         }
@@ -30,8 +30,7 @@ namespace RoomReservation_designPatterns.Data.DataModels
         public List<Room> getAvailableRooms()
         {
             // return rooms.Where(r => r.state.Equals("avai")).ToList();//to impl
-            return rooms;
-
+            return rooms; 
         }
 
         public void Update(IObservable subject, string action)

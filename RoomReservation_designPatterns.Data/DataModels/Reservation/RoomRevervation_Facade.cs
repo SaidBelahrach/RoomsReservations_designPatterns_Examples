@@ -20,7 +20,7 @@ namespace RoomReservation_designPatterns.Data.DataModels
             hotel.getAvailableRooms();
             return null;
         }
-        public bool book()
+        public bool payReservation()
         {
             reservation.book();
             payment_Stategy.pay(reservation.amount);
