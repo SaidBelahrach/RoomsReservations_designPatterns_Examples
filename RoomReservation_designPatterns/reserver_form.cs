@@ -13,6 +13,8 @@ namespace RoomReservation_designPatterns.Destop
 {
     public partial class reserver_form : Form
     {
+        private DateTime debutDate;
+        private DateTime endDate;
         public reserver_form()
         {
             InitializeComponent();
@@ -31,6 +33,27 @@ namespace RoomReservation_designPatterns.Destop
         private void label3_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void dateExpirePickEnd_ValueChanged(object sender, EventArgs e)
+        {
+            lblRoomStatusAvail.Text = "";
+            this.debutDate = dateTimePickerDebut.Value;
+            checkIfAroomAvailable();
+        }
+
+        private void dateTimePickerDebut_ValueChanged(object sender, EventArgs e)
+        {
+            lblRoomStatusAvail.Text = "";
+            this.endDate = dateExpirePickerEnd.Value;
+            checkIfAroomAvailable();
+
+        }
+
+        private Room checkIfAroomAvailable()
+        {
+            lblRoomStatusAvail.Text = "qsdkmqsd";
+            return new Room();
         }
     }
 }

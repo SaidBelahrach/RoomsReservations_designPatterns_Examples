@@ -40,15 +40,16 @@ namespace RoomReservation_designPatterns.Destop
             this.Annuler = new System.Windows.Forms.Button();
             this.Ajouter = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.dateExpirePick = new System.Windows.Forms.DateTimePicker();
+            this.dateExpirePickerEnd = new System.Windows.Forms.DateTimePicker();
             this.lblQuantite = new System.Windows.Forms.Label();
             this.lbl_chambre = new System.Windows.Forms.Label();
             this.chambres_combox = new System.Windows.Forms.ComboBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePickerDebut = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.lblRoomStatusAvail = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
@@ -72,7 +73,7 @@ namespace RoomReservation_designPatterns.Destop
             this.DE.AutoSize = true;
             this.DE.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.DE.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.DE.Location = new System.Drawing.Point(370, 157);
+            this.DE.Location = new System.Drawing.Point(371, 158);
             this.DE.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.DE.Name = "DE";
             this.DE.Size = new System.Drawing.Size(73, 20);
@@ -123,22 +124,23 @@ namespace RoomReservation_designPatterns.Destop
             this.pictureBox1.TabIndex = 18;
             this.pictureBox1.TabStop = false;
             // 
-            // dateExpirePick
+            // dateExpirePickerEnd
             // 
-            this.dateExpirePick.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateExpirePick.Location = new System.Drawing.Point(545, 154);
-            this.dateExpirePick.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.dateExpirePick.MinimumSize = new System.Drawing.Size(4, 27);
-            this.dateExpirePick.Name = "dateExpirePick";
-            this.dateExpirePick.Size = new System.Drawing.Size(181, 27);
-            this.dateExpirePick.TabIndex = 19;
+            this.dateExpirePickerEnd.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateExpirePickerEnd.Location = new System.Drawing.Point(545, 154);
+            this.dateExpirePickerEnd.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.dateExpirePickerEnd.MinimumSize = new System.Drawing.Size(4, 27);
+            this.dateExpirePickerEnd.Name = "dateExpirePickerEnd";
+            this.dateExpirePickerEnd.Size = new System.Drawing.Size(181, 27);
+            this.dateExpirePickerEnd.TabIndex = 19;
+            this.dateExpirePickerEnd.ValueChanged += new System.EventHandler(this.dateExpirePickEnd_ValueChanged);
             // 
             // lblQuantite
             // 
             this.lblQuantite.AutoSize = true;
             this.lblQuantite.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblQuantite.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblQuantite.Location = new System.Drawing.Point(370, 203);
+            this.lblQuantite.Location = new System.Drawing.Point(370, 215);
             this.lblQuantite.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblQuantite.Name = "lblQuantite";
             this.lblQuantite.Size = new System.Drawing.Size(164, 20);
@@ -171,22 +173,23 @@ namespace RoomReservation_designPatterns.Destop
             this.chambres_combox.Size = new System.Drawing.Size(181, 26);
             this.chambres_combox.TabIndex = 28;
             // 
-            // dateTimePicker1
+            // dateTimePickerDebut
             // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(545, 111);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.dateTimePicker1.MinimumSize = new System.Drawing.Size(4, 27);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(181, 27);
-            this.dateTimePicker1.TabIndex = 30;
+            this.dateTimePickerDebut.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePickerDebut.Location = new System.Drawing.Point(545, 111);
+            this.dateTimePickerDebut.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.dateTimePickerDebut.MinimumSize = new System.Drawing.Size(4, 27);
+            this.dateTimePickerDebut.Name = "dateTimePickerDebut";
+            this.dateTimePickerDebut.Size = new System.Drawing.Size(181, 27);
+            this.dateTimePickerDebut.TabIndex = 30;
+            this.dateTimePickerDebut.ValueChanged += new System.EventHandler(this.dateTimePickerDebut_ValueChanged);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label2.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label2.Location = new System.Drawing.Point(370, 114);
+            this.label2.Location = new System.Drawing.Point(370, 118);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(97, 20);
@@ -222,10 +225,19 @@ namespace RoomReservation_designPatterns.Destop
             // 
             // numericUpDown1
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(545, 205);
+            this.numericUpDown1.Location = new System.Drawing.Point(541, 217);
             this.numericUpDown1.Name = "numericUpDown1";
             this.numericUpDown1.Size = new System.Drawing.Size(181, 23);
             this.numericUpDown1.TabIndex = 33;
+            // 
+            // lblRoomStatusAvail
+            // 
+            this.lblRoomStatusAvail.AutoSize = true;
+            this.lblRoomStatusAvail.ForeColor = System.Drawing.Color.Maroon;
+            this.lblRoomStatusAvail.Location = new System.Drawing.Point(392, 190);
+            this.lblRoomStatusAvail.Name = "lblRoomStatusAvail";
+            this.lblRoomStatusAvail.Size = new System.Drawing.Size(0, 15);
+            this.lblRoomStatusAvail.TabIndex = 34;
             // 
             // reserver_form
             // 
@@ -233,15 +245,16 @@ namespace RoomReservation_designPatterns.Destop
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(741, 454);
+            this.Controls.Add(this.lblRoomStatusAvail);
             this.Controls.Add(this.numericUpDown1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.dateTimePickerDebut);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.chambres_combox);
             this.Controls.Add(this.lbl_chambre);
             this.Controls.Add(this.lblQuantite);
-            this.Controls.Add(this.dateExpirePick);
+            this.Controls.Add(this.dateExpirePickerEnd);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.Ajouter);
             this.Controls.Add(this.Annuler);
@@ -266,14 +279,15 @@ namespace RoomReservation_designPatterns.Destop
         private System.Windows.Forms.Button Annuler;
         private System.Windows.Forms.Button Ajouter;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.DateTimePicker dateExpirePick;
+        private System.Windows.Forms.DateTimePicker dateExpirePickerEnd;
         private System.Windows.Forms.Label lblQuantite;
         private Label lbl_chambre;
         public ComboBox chambres_combox;
-        private DateTimePicker dateTimePicker1;
+        private DateTimePicker dateTimePickerDebut;
         private Label label2;
         private Label label1;
         private Label label3;
         private NumericUpDown numericUpDown1;
+        private Label lblRoomStatusAvail;
     }
 }

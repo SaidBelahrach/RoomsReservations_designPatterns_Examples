@@ -8,7 +8,6 @@ namespace RoomReservation_designPatterns.Data.DataAccess
     public class RoomsData
     {
 
-
         public static List<Room> allRooms = new List<Room>() {
             new Room(),
         };

@@ -1,36 +1,17 @@
 ﻿namespace RoomReservation_designPatterns.Data.DataModels
 {
-    public class Room: IObservable
+    public class Room
     {
-        public bool state { get; set; } 
-        public IObserver observer { get; set; }
+        public int number { get; set; }
+        public float price { get; set; }
 
-        public void Attach(IObserver observer)
+        
+        public bool isAvailable(DateTime start,)
         {
-            this.observer = observer;
-        }
 
-        public void Detach()
-        {
-            this.observer = null;
-        }
-
-        public void Notify()
-        {
-            throw new System.NotImplementedException();
         }
     }
-    public interface IObserver
-    {
-        void Update(IObservable subject, string action);
-    }
+ 
 
-    public interface IObservable
-    {
-        void Attach(IObserver observer);
-
-        void Detach();
-
-        void Notify();
-    }
+   
 }
