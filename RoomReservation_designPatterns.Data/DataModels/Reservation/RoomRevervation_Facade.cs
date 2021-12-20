@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace RoomReservation_designPatterns.Data.DataModels
 {
@@ -15,10 +16,9 @@ namespace RoomReservation_designPatterns.Data.DataModels
             this.hotel = hotel;
         }
 
-        public List<Room> getAvailableRooms()
+        public List<Room> getAvailableRooms(DateTime d1, DateTime d2)
         {
-            hotel.getAvailableRooms();
-            return null;
+            return hotel.getAvailableRooms(d1, d2);
         }
         public bool payReservation()
         {

@@ -5,30 +5,34 @@ namespace RoomReservation_designPatterns.Data.DataModels
     public class Reservation
     {
         public int id { get; set; }
-        public DateTime date { get; set; }
+        public DateTime dateDebut { get; set; }
+        public DateTime dateFin { get; set; }
         public double amount { get; set; }
         public string status { get; set; }
         public Client client { get; set; }
-        public Room room { get; set; }
+        public Room room { get; set; } 
 
-        public Reservation(Client client, Room room, double amount)
+        public Reservation( Room room, DateTime dateDebut, DateTime dateFin)
         {
-            this.client = client;
+            this.client = Hotel.GetInstance().CurrentClient;
             this.room = room;
-            this.date = DateTime.Now;
-            this.amount = amount;
+            this.dateDebut = dateDebut;
+            this.dateFin = dateFin; 
+            this.dateDebut = DateTime.Now;
+            this.amount = dateFin.Subtract(dateDebut).TotalDays * room.price;
+            Hotel.GetInstance().reservations.Add(this);
             this.status= "Created";
         }
         public bool book()
         { 
-            this.status = "Booked";
-            Console.WriteLine("Reservation Booked");
-            return false;
+            this.status = "Booked"; 
+            return true;
         }
         public bool cancel()
         {
             this.status = "Canceled";
             Console.WriteLine("Reservation canceled");
+            Hotel.GetInstance().reservations.Remove(this);
             return false;
         }
         public string getStatus()

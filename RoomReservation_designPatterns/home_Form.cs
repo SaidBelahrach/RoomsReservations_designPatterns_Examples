@@ -1,4 +1,5 @@
 ﻿using RoomReservation_designPatterns.Destop;
+using RoomReservation_designPatterns.Destop.Properties;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -29,7 +30,7 @@ namespace RoomReservation_designPatterns
         }
 
         private void btn_book_Click(object sender, EventArgs e)
-        {
+        { 
             reserver_form bookForm = new reserver_form();
             bookForm.Show();
         }

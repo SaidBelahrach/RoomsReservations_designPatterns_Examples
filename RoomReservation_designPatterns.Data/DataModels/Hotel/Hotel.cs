@@ -4,11 +4,13 @@ using System.Linq;
 
 namespace RoomReservation_designPatterns.Data.DataModels
 {
-    public class Hotel:IObserver
+    public class Hotel 
     {
         public string name { get; set; }
         public List<Room> rooms { get; set; }
         public List<Client> clients { get; set; }
+        public Client CurrentClient { get; set; }
+        public List<Reservation> reservations { get; set; }
 
         private static Hotel hotel= null;
 
@@ -27,15 +29,9 @@ namespace RoomReservation_designPatterns.Data.DataModels
             return hotel;
         }
 
-        public List<Room> getAvailableRooms()
+        public List<Room> getAvailableRooms(DateTime dateDebut, DateTime dateFin)
         {
-            // return rooms.Where(r => r.state.Equals("avai")).ToList();//to impl
-            return rooms; 
-        }
-
-        public void Update(IObservable subject, string action)
-        {
-            throw new NotImplementedException();
-        }
+            return rooms.Where(r => r.isAvailable(dateDebut,dateFin)).ToList(); 
+        } 
     }
 }

@@ -59,5 +59,14 @@ namespace RoomReservation_designPatterns.Destop.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 0.
+        /// </summary>
+        internal static string CurrentUser {
+            get {
+                return ResourceManager.GetString("CurrentUser", resourceCulture);
+            }
+        }
     }
 }
