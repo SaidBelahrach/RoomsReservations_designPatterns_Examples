@@ -68,5 +68,35 @@ namespace RoomReservation_designPatterns.Destop.Properties {
                 return ResourceManager.GetString("CurrentUser", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap mcLogo {
+            get {
+                object obj = ResourceManager.GetObject("mcLogo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap PayPalLogo {
+            get {
+                object obj = ResourceManager.GetObject("PayPalLogo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap visaLogo1 {
+            get {
+                object obj = ResourceManager.GetObject("visaLogo1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

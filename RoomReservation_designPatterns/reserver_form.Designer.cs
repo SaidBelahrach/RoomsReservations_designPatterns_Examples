@@ -109,6 +109,7 @@ namespace RoomReservation_designPatterns.Destop
             this.Ajouter.TabIndex = 16;
             this.Ajouter.Text = "Valider";
             this.Ajouter.UseVisualStyleBackColor = false;
+            this.Ajouter.Click += new System.EventHandler(this.Ajouter_Click);
             // 
             // pictureBox1
             // 

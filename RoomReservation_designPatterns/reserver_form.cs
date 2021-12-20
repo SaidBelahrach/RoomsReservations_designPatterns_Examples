@@ -55,5 +55,14 @@ namespace RoomReservation_designPatterns.Destop
             lblRoomStatusAvail.Text = "qsdkmqsd";
             return new Room(1,1,200);
         }
+
+        private void Ajouter_Click(object sender, EventArgs e)
+        {
+            FormPayement fp = new FormPayement();
+            fp.Show();
+            this.Visible = false;
+
+
+        }
     }
 }
