@@ -23,11 +23,7 @@ namespace RoomReservation_designPatterns.Destop
         private void reserver_form_Load(object sender, EventArgs e)
         {
             Hotel hotel=Hotel.GetInstance();
-            foreach (var item in hotel.getAvailableRooms().Select(r => r.state).ToArray())
-            {
-                this.chambres_combox.Items.Add(item);
 
-            }
         }
 
         private void label3_Click(object sender, EventArgs e)
@@ -54,6 +50,15 @@ namespace RoomReservation_designPatterns.Destop
         {
             lblRoomStatusAvail.Text = "qsdkmqsd";
             return new Room();
+        }
+
+        private void Ajouter_Click(object sender, EventArgs e)
+        {
+            FormPayement fp = new FormPayement();
+            fp.Show();
+            this.Visible = false;
+
+
         }
     }
 }

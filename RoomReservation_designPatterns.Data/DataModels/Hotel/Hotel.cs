@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace RoomReservation_designPatterns.Data.DataModels
 {
-    public class Hotel:IObserver
+    public class Hotel
     {
         public string name { get; set; }
         public List<Room> rooms { get; set; }
@@ -33,9 +33,6 @@ namespace RoomReservation_designPatterns.Data.DataModels
             return rooms; 
         }
 
-        public void Update(IObservable subject, string action)
-        {
-            throw new NotImplementedException();
-        }
+       
     }
 }

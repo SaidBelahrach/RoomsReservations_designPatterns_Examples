@@ -6,10 +6,7 @@
         public float price { get; set; }
 
         
-        public bool isAvailable(DateTime start,)
-        {
-
-        }
+        
     }
  
 
