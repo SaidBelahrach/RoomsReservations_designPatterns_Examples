@@ -73,11 +73,11 @@ namespace RoomReservation_designPatterns.Destop
         {
             Reservation res = new Reservation(this.chosenRoom, this.debutDate, this.endDate);
             this.rs.addReservation(res);
-            FormPayement fp = new FormPayement(res.getReservationPrice());
+         /*   FormPayement fp = new FormPayement(res.getReservationPrice());
             fp.Show();
-            this.Visible = false;
+            this.Visible = false;*/
 
-        }
+        } 
 
         private void initialRoomCheck()
         {
@@ -86,7 +86,14 @@ namespace RoomReservation_designPatterns.Destop
             {
                 Ajouter.Enabled = true;
                 this.chosenRoom = rooms[0];
+                MessageBox.Show(this.chosenRoom.number+"");
                 labelPrice.Text = rooms[0].price * ((dateExpirePickerEnd.Value - dateTimePickerDebut.Value).Days + 1) + "DH";
+            }else
+            {
+                Ajouter.Enabled = false;
+                labelPrice.Text = "";
+                lblRoomStatusAvail.Text = "Pas de chambres libre , Changer la date";
+
             }
         }
     }

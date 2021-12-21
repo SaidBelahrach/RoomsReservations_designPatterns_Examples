@@ -17,9 +17,9 @@ namespace RoomReservation_designPatterns.Data.DataModels
         }
 
         public bool isAvailable(DateTime d1,DateTime d2) {
-           var resExist = Hotel.GetInstance().reservations
-                .Where(r => r.room.number == number && ((d1> r.dateDebut && d1 <r.dateFin) || (d2 > r.dateDebut && d2 < r.dateFin)))
-                .Any();
+            var resExist = Hotel.GetInstance().reservations
+                 .Where(r => r.room.number == number && ((d1.Date >= r.dateDebut.Date && d1 <= r.dateFin.Date) || (d2 >= r.dateDebut.Date && d2 <= r.dateFin.Date)))
+                 .Any();
             return !resExist;
         }
     } 

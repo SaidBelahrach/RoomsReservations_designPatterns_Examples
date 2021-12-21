@@ -12,7 +12,10 @@ namespace RoomReservation_designPatterns.Data.DataModels
 
         public RoomRevervation_Facade()
         {
-           
+            if (hotel == null)
+            {
+                this.hotel = Hotel.GetInstance();
+            }
         }
 
         public RoomRevervation_Facade(Reservation reservation, Payment_Stategy payment_Stategy, Hotel hotel)
@@ -25,19 +28,11 @@ namespace RoomReservation_designPatterns.Data.DataModels
 
         public List<Room> getAvailableRooms(DateTime d1, DateTime d2)
         {
-            if(hotel == null)
-            {
-                this.hotel =  Hotel.GetInstance();
-            }
             return hotel.getAvailableRooms(d1, d2);
         }
 
         public void addReservation(Reservation res)
         {
-            if (hotel == null)
-            {
-                this.hotel = Hotel.GetInstance();
-            }
             this.hotel.addReservation(res);
         }
         public bool payReservation()
