@@ -18,6 +18,7 @@ namespace RoomReservation_designPatterns.Data.DataModels
         { 
             clients = DataAccess.ClientData.allClients; //default values
             rooms = DataAccess.RoomsData.allRooms;      //default values
+            reservations = new List<Reservation>();
         }
 
         public static Hotel GetInstance()
@@ -33,5 +34,15 @@ namespace RoomReservation_designPatterns.Data.DataModels
         {
             return rooms.Where(r => r.isAvailable(dateDebut,dateFin)).ToList(); 
         } 
+
+        public Room getFirstEmptyAvailbaleRoom(DateTime dateDebut, DateTime dateFin)
+        {
+            return rooms.Where(r => r.isAvailable(dateDebut, dateFin)).FirstOrDefault();
+        }
+
+        public void addReservation(Reservation res)
+        {
+            this.reservations.Add(res);
+        }
     }
 }

@@ -39,5 +39,10 @@ namespace RoomReservation_designPatterns.Data.DataModels
         {
             return this.status;
         }
+
+        public float getReservationPrice()
+        {
+            return this.room.price * ((this.dateFin - this.dateFin).Days +1);
+        }
     }
 }

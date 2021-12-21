@@ -8,11 +8,21 @@ using System.Windows.Forms;
 
 namespace RoomReservation_designPatterns.Destop
 {
+    public enum PayMethod
+    {
+        PAYPAL,
+        VISA,
+        MASTER_CARD
+    }
     public partial class FormPayement : Form
     {
-        public FormPayement()
+        PayMethod chosenMethode = PayMethod.VISA;
+        private float amount = 0;
+        public FormPayement(float amount)
         {
+            this.amount = amount;
             InitializeComponent();
+            labelAmount.Text = amount + " DH";
         }
 
         private void card_Click(object sender, EventArgs e)
@@ -30,27 +40,38 @@ namespace RoomReservation_designPatterns.Destop
             }
             if (panelName.Contains("Mc"))
             {
+                this.chosenMethode = PayMethod.MASTER_CARD;
                 panelForumCards.Visible = true;
                 panelPaypalFormContainer.Visible = false;
-                Console.WriteLine("Mc");
             }
             else if (panelName.Contains("Paypal"))
             {
+                this.chosenMethode = PayMethod.PAYPAL;
                 panelPaypalFormContainer.Visible = true;
                 panelForumCards.Visible = false;
-
-                Console.WriteLine("Paypal");
             }
-            else  //Vise Panel Chosen 
+            else  //Visa Panel Chosen 
             {
+                this.chosenMethode = PayMethod.VISA;
                 panelForumCards.Visible = true;
                 panelPaypalFormContainer.Visible = false;
-
-                Console.WriteLine("Visa");
             }
 
         }
 
-       
+        private void Chekout_click(object sender, EventArgs e)
+        {
+            if(this.chosenMethode == PayMethod.MASTER_CARD)
+            {
+
+            }else if(this.chosenMethode == PayMethod.PAYPAL)
+            {
+
+            }else // Visa Methode is Chosen
+            {
+
+            }
+
+        }
     }
 }

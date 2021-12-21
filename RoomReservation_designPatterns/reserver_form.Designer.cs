@@ -47,7 +47,7 @@ namespace RoomReservation_designPatterns.Destop
             this.dateTimePickerDebut = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.labelPrice = new System.Windows.Forms.Label();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.lblRoomStatusAvail = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -98,6 +98,7 @@ namespace RoomReservation_designPatterns.Destop
             // Ajouter
             // 
             this.Ajouter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(167)))), ((int)(((byte)(69)))));
+            this.Ajouter.Enabled = false;
             this.Ajouter.FlatAppearance.BorderSize = 0;
             this.Ajouter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Ajouter.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
@@ -209,20 +210,20 @@ namespace RoomReservation_designPatterns.Destop
             this.label1.TabIndex = 31;
             this.label1.Text = "Coût:";
             // 
-            // label3
+            // labelPrice
             // 
-            this.label3.AutoSize = true;
-            this.label3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.label3.Location = new System.Drawing.Point(545, 314);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(118, 38);
-            this.label3.TabIndex = 32;
-            this.label3.Text = "150 DH";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
+            this.labelPrice.AutoSize = true;
+            this.labelPrice.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.labelPrice.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.labelPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelPrice.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.labelPrice.Location = new System.Drawing.Point(545, 314);
+            this.labelPrice.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelPrice.Name = "labelPrice";
+            this.labelPrice.Size = new System.Drawing.Size(118, 38);
+            this.labelPrice.TabIndex = 32;
+            this.labelPrice.Text = "150 DH";
+            this.labelPrice.Click += new System.EventHandler(this.label3_Click);
             // 
             // numericUpDown1
             // 
@@ -248,7 +249,7 @@ namespace RoomReservation_designPatterns.Destop
             this.ClientSize = new System.Drawing.Size(741, 454);
             this.Controls.Add(this.lblRoomStatusAvail);
             this.Controls.Add(this.numericUpDown1);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.labelPrice);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dateTimePickerDebut);
             this.Controls.Add(this.label2);
@@ -287,7 +288,7 @@ namespace RoomReservation_designPatterns.Destop
         private DateTimePicker dateTimePickerDebut;
         private Label label2;
         private Label label1;
-        private Label label3;
+        private Label labelPrice;
         private NumericUpDown numericUpDown1;
         private Label lblRoomStatusAvail;
     }
