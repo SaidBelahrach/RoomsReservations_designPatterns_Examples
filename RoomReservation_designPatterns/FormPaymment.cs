@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RoomReservation_designPatterns.Data.DataModels;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -61,16 +62,20 @@ namespace RoomReservation_designPatterns.Destop
 
         private void Chekout_click(object sender, EventArgs e)
         {
-            if(this.chosenMethode == PayMethod.MASTER_CARD)
+            Payment_Stategy ps;
+            if (this.chosenMethode == PayMethod.MASTER_CARD)
             {
-
-            }else if(this.chosenMethode == PayMethod.PAYPAL)
-            {
-
-            }else // Visa Methode is Chosen
-            {
-
+                ps = new Payment_Stategy(new MasterCard());
             }
+            else if(this.chosenMethode == PayMethod.PAYPAL)
+            {
+                 ps = new Payment_Stategy(new Paypal());
+            }
+            else // Visa Methode is Chosen
+            {
+                 ps = new Payment_Stategy(new VisaCard());
+            }
+            ps.pay(amount);
 
         }
     }

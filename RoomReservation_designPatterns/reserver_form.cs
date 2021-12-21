@@ -73,10 +73,9 @@ namespace RoomReservation_designPatterns.Destop
         {
             Reservation res = new Reservation(this.chosenRoom, this.debutDate, this.endDate);
             this.rs.addReservation(res);
-         /*   FormPayement fp = new FormPayement(res.getReservationPrice());
+            FormPayement fp = new FormPayement(res.getReservationPrice());
             fp.Show();
-            this.Visible = false;*/
-
+            this.Visible = false;
         } 
 
         private void initialRoomCheck()
