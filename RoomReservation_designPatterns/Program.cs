@@ -1,3 +1,4 @@
+using RoomReservation_designPatterns.Destop;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,7 +17,7 @@ namespace RoomReservation_designPatterns
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new home_Form());  
+            Application.Run(new LoginForm());  
         }
     }
 }
