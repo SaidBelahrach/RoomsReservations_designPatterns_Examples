@@ -174,6 +174,7 @@ namespace RoomReservation_designPatterns.Destop
             this.chambres_combox.Name = "chambres_combox";
             this.chambres_combox.Size = new System.Drawing.Size(181, 26);
             this.chambres_combox.TabIndex = 28;
+            this.chambres_combox.SelectedIndexChanged += new System.EventHandler(this.chambres_combox_SelectedIndexChanged);
             // 
             // dateTimePickerDebut
             // 
@@ -220,9 +221,9 @@ namespace RoomReservation_designPatterns.Destop
             this.labelPrice.Location = new System.Drawing.Point(545, 314);
             this.labelPrice.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelPrice.Name = "labelPrice";
-            this.labelPrice.Size = new System.Drawing.Size(118, 38);
+            this.labelPrice.Size = new System.Drawing.Size(84, 38);
             this.labelPrice.TabIndex = 32;
-            this.labelPrice.Text = "150 DH";
+            this.labelPrice.Text = "0 DH";
             this.labelPrice.Click += new System.EventHandler(this.label3_Click);
             // 
             // numericUpDown1

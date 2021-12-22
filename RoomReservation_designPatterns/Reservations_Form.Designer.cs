@@ -65,33 +65,30 @@ namespace RoomReservation_designPatterns.Destop
             this.dataGridView1.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(235)))), ((int)(((byte)(255)))));
             this.dataGridView1.Size = new System.Drawing.Size(704, 411);
             this.dataGridView1.TabIndex = 2;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // Ref
             // 
             this.Ref.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Ref.HeaderText = "Ref";
             this.Ref.Name = "Ref";
-            this.Ref.ReadOnly = true;
             // 
             // Date
             // 
             this.Date.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Date.HeaderText = "Date";
             this.Date.Name = "Date";
-            this.Date.ReadOnly = true;
             // 
             // Chambre
             // 
             this.Chambre.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Chambre.HeaderText = "Chambre";
             this.Chambre.Name = "Chambre";
-            this.Chambre.ReadOnly = true;
             // 
             // Cout
             // 
             this.Cout.HeaderText = "Coût";
             this.Cout.Name = "Cout";
-            this.Cout.ReadOnly = true;
             // 
             // Reservations
             // 

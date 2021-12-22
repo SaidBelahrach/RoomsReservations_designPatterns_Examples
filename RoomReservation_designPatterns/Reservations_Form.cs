@@ -29,12 +29,18 @@ namespace RoomReservation_designPatterns.Destop
             var i = 0;
             foreach(Reservation res in this.reservations)
             {
+                if (i < reservations.Count - 1) dataGridView1.Rows.Add();
                 dataGridView1.Rows[i].Cells[0].Value = res.id;
-                dataGridView1.Rows[i].Cells[1].Value = res.dateDebut.Date + "-" + res.dateFin.Date;
+                dataGridView1.Rows[i].Cells[1].Value = res.dateDebut.Date.ToShortDateString() + "-" + res.dateFin.Date.ToShortDateString();
                 dataGridView1.Rows[i].Cells[2].Value = res.room.number;
-                dataGridView1.Rows[i].Cells[3].Value = res.getReservationPrice();
+                dataGridView1.Rows[i].Cells[3].Value = res.amount.ToString("N2");
                 i++;
             }
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

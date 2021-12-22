@@ -12,6 +12,7 @@ namespace RoomReservation_designPatterns.Data.DataModels
         public string email { get; set; }
         public Client(string fullname, string phone, string email)
         {
+            this.id = new Random().Next(1000)+"";
             this.fullname = fullname;
             this.phone = phone;
             this.email = email;

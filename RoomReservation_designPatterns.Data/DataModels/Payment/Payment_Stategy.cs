@@ -12,7 +12,7 @@
         public bool pay(double amount)
         {
             paymentMethod.pay(amount);
-            return false;
+            return  true;
         }
 
     }

@@ -9,16 +9,17 @@ namespace RoomReservation_designPatterns.Data.DataModels
         public string name { get; set; }
         public List<Room> rooms { get; set; }
         public List<Client> clients { get; set; }
-        public Client CurrentClient { get; set; }
-        public List<Reservation> reservations { get; set; }
+        public Client CurrentClient { get; set; }= new Client("said", "06555555", "ee@dd.fr");
+        public List<Reservation> reservations;
 
         private static Hotel hotel= null;
 
         private Hotel()
         { 
             clients = DataAccess.ClientData.allClients; //default values
-            rooms = DataAccess.RoomsData.allRooms;      //default values
-            reservations = new List<Reservation>();
+            rooms = DataAccess.RoomsData.allRooms;      //default values 
+            reservations = DataAccess.ReservationData.reservations;
+           
         }
 
         public static Hotel GetInstance()
@@ -40,9 +41,19 @@ namespace RoomReservation_designPatterns.Data.DataModels
             return rooms.Where(r => r.isAvailable(dateDebut, dateFin)).FirstOrDefault();
         }
 
+        public List<Reservation> getClientReservations(string id)
+        {
+            return reservations.ToList();
+        }
+
         public void addReservation(Reservation res)
         {
             this.reservations.Add(res);
+        }
+
+        public void addCurrrentClient(Client currentCurrent)
+        {
+            this.CurrentClient = currentCurrent;
         }
     }
 }

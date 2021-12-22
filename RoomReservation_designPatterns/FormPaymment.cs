@@ -8,52 +8,46 @@ using System.Text;
 using System.Windows.Forms;
 
 namespace RoomReservation_designPatterns.Destop
-{
-    public enum PayMethod
-    {
-        PAYPAL,
-        VISA,
-        MASTER_CARD
-    }
+{ 
     public partial class FormPayement : Form
-    {
-        PayMethod chosenMethode = PayMethod.VISA;
+    { 
+        IPayment payment;
         private float amount = 0;
         public FormPayement(float amount)
         {
             this.amount = amount;
             InitializeComponent();
-            labelAmount.Text = amount + " DH";
+            labelAmount.Text = amount.ToString("N2") + " DH";
         }
 
         private void card_Click(object sender, EventArgs e)
         {
             String panelName = (sender as Panel).Name;
             Panel panel = (sender as Panel);
-            panel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            panel.BorderStyle =BorderStyle.Fixed3D;
             foreach (Panel item in panelMethohdsContianer.Controls)
             {
                 if (item.Name == panel.Name)
                 {
                     continue;
                 }
-                item.BorderStyle = System.Windows.Forms.BorderStyle.None;
+                item.BorderStyle = BorderStyle.None;
             }
-            if (panelName.Contains("Mc"))
+            if (panelName.Contains("Paypal"))
             {
-                this.chosenMethode = PayMethod.MASTER_CARD;
-                panelForumCards.Visible = true;
-                panelPaypalFormContainer.Visible = false;
-            }
-            else if (panelName.Contains("Paypal"))
-            {
-                this.chosenMethode = PayMethod.PAYPAL;
+                payment = new CardFactory().getCard("Visa"); 
                 panelPaypalFormContainer.Visible = true;
                 panelForumCards.Visible = false;
             }
-            else  //Visa Panel Chosen 
+            else if (panelName.Contains("Mc"))
             {
-                this.chosenMethode = PayMethod.VISA;
+                payment = new CardFactory().getCard("MasterCard"); 
+                panelForumCards.Visible = true;
+                panelPaypalFormContainer.Visible = false;
+            }
+            else //Paypal
+            {
+                payment = new Paypal(); 
                 panelForumCards.Visible = true;
                 panelPaypalFormContainer.Visible = false;
             }
@@ -62,21 +56,21 @@ namespace RoomReservation_designPatterns.Destop
 
         private void Chekout_click(object sender, EventArgs e)
         {
-            Payment_Stategy ps;
-            if (this.chosenMethode == PayMethod.MASTER_CARD)
+            if (payment == null )
             {
-                ps = new Payment_Stategy(new MasterCard());
+                MessageBox.Show("Données incorrectes", "Error", MessageBoxButtons.OK,
+                                 MessageBoxIcon.Error);
             }
-            else if(this.chosenMethode == PayMethod.PAYPAL)
+            Payment_Stategy ps = new Payment_Stategy(payment);
+            if (ps.pay(amount))
             {
-                 ps = new Payment_Stategy(new Paypal());
+                MessageBox.Show("Reservation effectué!", "Reservation", MessageBoxButtons.OK,
+                                 MessageBoxIcon.Information);
+                this.Close();
             }
-            else // Visa Methode is Chosen
-            {
-                 ps = new Payment_Stategy(new VisaCard());
-            }
-            ps.pay(amount);
-
+            else MessageBox.Show("Reservation échouée!", "Reservation", MessageBoxButtons.OK,
+                                 MessageBoxIcon.Warning);
+            
         }
     }
 }

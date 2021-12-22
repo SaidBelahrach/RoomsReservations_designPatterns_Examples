@@ -1,4 +1,5 @@
-﻿using RoomReservation_designPatterns.Destop;
+﻿using RoomReservation_designPatterns.Data.DataModels;
+using RoomReservation_designPatterns.Destop;
 using RoomReservation_designPatterns.Destop.Properties;
 using System;
 using System.Collections.Generic;
@@ -14,6 +15,7 @@ namespace RoomReservation_designPatterns
 {
     public partial class home_Form : Form
     {
+        RoomRevervation_Facade facade = new RoomRevervation_Facade();
         public home_Form()
         {
             InitializeComponent();
@@ -37,8 +39,7 @@ namespace RoomReservation_designPatterns
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
-            Reservations myreser = new Reservations();
+            Reservations myreser = new Reservations(facade.getClientReservations());
             myreser.Show();
         }
 
