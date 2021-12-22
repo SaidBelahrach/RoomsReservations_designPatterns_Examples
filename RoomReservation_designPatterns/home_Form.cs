@@ -19,7 +19,7 @@ namespace RoomReservation_designPatterns
         public home_Form()
         {
             InitializeComponent();
-            labelClientName.Text = Hotel.GetInstance().CurrentClient.fullname;
+            labelClientName.Text ="Bonjour "+ Hotel.GetInstance().CurrentClient.fullname;
         }
 
         private void img_book_Paint(object sender, PaintEventArgs e)

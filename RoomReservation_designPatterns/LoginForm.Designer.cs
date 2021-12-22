@@ -29,6 +29,7 @@ namespace RoomReservation_designPatterns.Destop
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginForm));
             this.panelContainerInputs = new System.Windows.Forms.Panel();
             this.loginBtn = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
@@ -37,12 +38,14 @@ namespace RoomReservation_designPatterns.Destop
             this.tbTele = new System.Windows.Forms.TextBox();
             this.tbEmail = new System.Windows.Forms.TextBox();
             this.tbNomComplet = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.panelContainerInputs.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelContainerInputs
             // 
             this.panelContainerInputs.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.panelContainerInputs.Controls.Add(this.label4);
             this.panelContainerInputs.Controls.Add(this.loginBtn);
             this.panelContainerInputs.Controls.Add(this.label3);
             this.panelContainerInputs.Controls.Add(this.label2);
@@ -62,7 +65,7 @@ namespace RoomReservation_designPatterns.Destop
             this.loginBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.loginBtn.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.loginBtn.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.loginBtn.Location = new System.Drawing.Point(46, 276);
+            this.loginBtn.Location = new System.Drawing.Point(43, 276);
             this.loginBtn.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.loginBtn.Name = "loginBtn";
             this.loginBtn.Size = new System.Drawing.Size(242, 37);
@@ -75,7 +78,7 @@ namespace RoomReservation_designPatterns.Destop
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Yu Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(120, 182);
+            this.label3.Location = new System.Drawing.Point(117, 200);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(85, 21);
             this.label3.TabIndex = 5;
@@ -86,7 +89,7 @@ namespace RoomReservation_designPatterns.Destop
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Yu Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(137, 115);
+            this.label2.Location = new System.Drawing.Point(134, 133);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(51, 21);
             this.label2.TabIndex = 4;
@@ -97,7 +100,7 @@ namespace RoomReservation_designPatterns.Destop
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Yu Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(110, 51);
+            this.label1.Location = new System.Drawing.Point(107, 69);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(112, 21);
             this.label1.TabIndex = 3;
@@ -106,7 +109,7 @@ namespace RoomReservation_designPatterns.Destop
             // 
             // tbTele
             // 
-            this.tbTele.Location = new System.Drawing.Point(68, 204);
+            this.tbTele.Location = new System.Drawing.Point(65, 222);
             this.tbTele.Multiline = true;
             this.tbTele.Name = "tbTele";
             this.tbTele.Size = new System.Drawing.Size(202, 37);
@@ -114,7 +117,7 @@ namespace RoomReservation_designPatterns.Destop
             // 
             // tbEmail
             // 
-            this.tbEmail.Location = new System.Drawing.Point(68, 142);
+            this.tbEmail.Location = new System.Drawing.Point(65, 160);
             this.tbEmail.Multiline = true;
             this.tbEmail.Name = "tbEmail";
             this.tbEmail.Size = new System.Drawing.Size(202, 37);
@@ -122,17 +125,29 @@ namespace RoomReservation_designPatterns.Destop
             // 
             // tbNomComplet
             // 
-            this.tbNomComplet.Location = new System.Drawing.Point(68, 75);
+            this.tbNomComplet.Location = new System.Drawing.Point(65, 93);
             this.tbNomComplet.Multiline = true;
             this.tbNomComplet.Name = "tbNomComplet";
             this.tbNomComplet.Size = new System.Drawing.Size(202, 37);
             this.tbNomComplet.TabIndex = 0;
             this.tbNomComplet.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Yu Gothic", 15.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label4.Location = new System.Drawing.Point(99, 19);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(146, 27);
+            this.label4.TabIndex = 19;
+            this.label4.Text = "Se connecter";
+            // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.panelContainerInputs);
             this.Name = "LoginForm";
@@ -153,5 +168,6 @@ namespace RoomReservation_designPatterns.Destop
         private System.Windows.Forms.TextBox tbEmail;
         private System.Windows.Forms.TextBox tbNomComplet;
         private System.Windows.Forms.Button loginBtn;
+        private System.Windows.Forms.Label label4;
     }
 }

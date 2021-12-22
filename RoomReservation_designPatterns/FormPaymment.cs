@@ -1,16 +1,11 @@
 ﻿using RoomReservation_designPatterns.Data.DataModels;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
 
 namespace RoomReservation_designPatterns.Destop
-{ 
+{
     public partial class FormPayement : Form
-    { 
+    {
         IPayment payment;
         private float amount = 0;
         public FormPayement(float amount)
@@ -24,7 +19,7 @@ namespace RoomReservation_designPatterns.Destop
         {
             String panelName = (sender as Panel).Name;
             Panel panel = (sender as Panel);
-            panel.BorderStyle =BorderStyle.Fixed3D;
+            panel.BorderStyle = BorderStyle.Fixed3D;
             foreach (Panel item in panelMethohdsContianer.Controls)
             {
                 if (item.Name == panel.Name)
@@ -35,19 +30,19 @@ namespace RoomReservation_designPatterns.Destop
             }
             if (panelName.Contains("Paypal"))
             {
-                payment = new CardFactory().getCard("Visa"); 
+                payment = new CardFactory().getCard("Visa");
                 panelPaypalFormContainer.Visible = true;
                 panelForumCards.Visible = false;
             }
             else if (panelName.Contains("Mc"))
             {
-                payment = new CardFactory().getCard("MasterCard"); 
+                payment = new CardFactory().getCard("MasterCard");
                 panelForumCards.Visible = true;
                 panelPaypalFormContainer.Visible = false;
             }
             else //Paypal
             {
-                payment = new Paypal(); 
+                payment = new Paypal();
                 panelForumCards.Visible = true;
                 panelPaypalFormContainer.Visible = false;
             }
@@ -56,7 +51,7 @@ namespace RoomReservation_designPatterns.Destop
 
         private void Chekout_click(object sender, EventArgs e)
         {
-            if (payment == null )
+            if (payment == null)
             {
                 MessageBox.Show("Données incorrectes", "Error", MessageBoxButtons.OK,
                                  MessageBoxIcon.Error);
@@ -71,7 +66,7 @@ namespace RoomReservation_designPatterns.Destop
             }
             else MessageBox.Show("Reservation échouée!", "Reservation", MessageBoxButtons.OK,
                                  MessageBoxIcon.Warning);
-            
+
         }
     }
 }

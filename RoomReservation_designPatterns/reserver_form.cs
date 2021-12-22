@@ -1,20 +1,15 @@
-﻿using System;
+﻿using RoomReservation_designPatterns.Data.DataModels;
+using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
-using System.Windows.Forms;
-using RoomReservation_designPatterns.Data.DataModels;
-using RoomReservation_designPatterns.Data.DataAccess;
 using System.Linq;
+using System.Windows.Forms;
 
 namespace RoomReservation_designPatterns.Destop
 {
     public partial class reserver_form : Form
     {
         private RoomRevervation_Facade facade;
-        private Room chosenRoom=null;
+        private Room chosenRoom = null;
         private DateTime debutDate;
         private DateTime endDate;
         public reserver_form()
@@ -26,7 +21,7 @@ namespace RoomReservation_designPatterns.Destop
 
         private void reserver_form_Load(object sender, EventArgs e)
         {
-            Hotel hotel=Hotel.GetInstance(); 
+            Hotel hotel = Hotel.GetInstance();
         }
 
         private void label3_Click(object sender, EventArgs e)
@@ -63,7 +58,8 @@ namespace RoomReservation_designPatterns.Destop
             {
                 Ajouter.Enabled = false;
                 lblRoomStatusAvail.Text = "Pas de chambres libre , Changer la date";
-            }else
+            }
+            else
             {
                 Ajouter.Enabled = true;
                 this.chosenRoom = rooms[0];
@@ -73,7 +69,7 @@ namespace RoomReservation_designPatterns.Destop
 
         private void Ajouter_Click(object sender, EventArgs e)
         {
-            if(chosenRoom==null || this.debutDate==null || this.endDate == null || this.debutDate> this.endDate)
+            if (chosenRoom == null || this.debutDate == null || this.endDate == null || this.debutDate > this.endDate)
             {
                 MessageBox.Show("Données saisies incorrectes!", "Error", MessageBoxButtons.OK,
                                  MessageBoxIcon.Error);
@@ -84,7 +80,7 @@ namespace RoomReservation_designPatterns.Destop
             FormPayement fp = new FormPayement(res.amount);
             fp.Show();
             this.Visible = false;
-        } 
+        }
 
         private void initialRoomCheck()
         {
@@ -92,9 +88,10 @@ namespace RoomReservation_designPatterns.Destop
             if (rooms.Count > 0)
             {
                 Ajouter.Enabled = true;
-             //   this.chosenRoom = rooms[0]; 
+                //   this.chosenRoom = rooms[0]; 
                 labelPrice.Text = "0 DH";
-            }else
+            }
+            else
             {
                 Ajouter.Enabled = false;
                 labelPrice.Text = "";

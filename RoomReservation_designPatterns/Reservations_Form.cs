@@ -1,10 +1,5 @@
 ﻿using RoomReservation_designPatterns.Data.DataModels;
-using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
 
 namespace RoomReservation_designPatterns.Destop
@@ -27,7 +22,7 @@ namespace RoomReservation_designPatterns.Destop
         private void loadGrid()
         {
             var i = 0;
-            foreach(Reservation res in this.reservations)
+            foreach (Reservation res in this.reservations)
             {
                 if (i < reservations.Count - 1) dataGridView1.Rows.Add();
                 dataGridView1.Rows[i].Cells[0].Value = res.id;
