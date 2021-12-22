@@ -9,7 +9,8 @@ namespace RoomReservation_designPatterns.Data.DataModels
         public string name { get; set; }
         public List<Room> rooms { get; set; }
         public List<Client> clients { get; set; }
-        public Client CurrentClient { get; set; }= new Client("said", "06555555", "ee@dd.fr");
+        public Client CurrentClient { get; set; }
+
         public List<Reservation> reservations;
 
         private static Hotel hotel= null;

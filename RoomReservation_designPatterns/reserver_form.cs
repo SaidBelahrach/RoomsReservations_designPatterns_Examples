@@ -14,7 +14,7 @@ namespace RoomReservation_designPatterns.Destop
     public partial class reserver_form : Form
     {
         private RoomRevervation_Facade facade;
-        private Room chosenRoom;
+        private Room chosenRoom=null;
         private DateTime debutDate;
         private DateTime endDate;
         public reserver_form()
@@ -73,15 +73,15 @@ namespace RoomReservation_designPatterns.Destop
 
         private void Ajouter_Click(object sender, EventArgs e)
         {
-            Reservation res = new Reservation(this.chosenRoom, this.debutDate, this.endDate);
-            this.facade.addReservation(res);
-            FormPayement fp = new FormPayement(res.amount);
             if(chosenRoom==null || this.debutDate==null || this.endDate == null || this.debutDate> this.endDate)
             {
                 MessageBox.Show("Données saisies incorrectes!", "Error", MessageBoxButtons.OK,
                                  MessageBoxIcon.Error);
                 return;
             }
+            Reservation res = new Reservation(this.chosenRoom, this.debutDate, this.endDate);
+            this.facade.addReservation(res);
+            FormPayement fp = new FormPayement(res.amount);
             fp.Show();
             this.Visible = false;
         } 
@@ -92,7 +92,7 @@ namespace RoomReservation_designPatterns.Destop
             if (rooms.Count > 0)
             {
                 Ajouter.Enabled = true;
-                this.chosenRoom = rooms[0]; 
+             //   this.chosenRoom = rooms[0]; 
                 labelPrice.Text = "0 DH";
             }else
             {
@@ -106,6 +106,11 @@ namespace RoomReservation_designPatterns.Destop
         private void chambres_combox_SelectedIndexChanged(object sender, EventArgs e)
         {
             chosenRoom = Hotel.GetInstance().rooms.FirstOrDefault(r => r.number == chambres_combox.SelectedIndex);
+        }
+
+        private void Annuler_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
