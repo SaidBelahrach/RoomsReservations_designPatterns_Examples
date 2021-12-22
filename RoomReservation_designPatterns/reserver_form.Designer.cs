@@ -94,6 +94,7 @@ namespace RoomReservation_designPatterns.Destop
             this.Annuler.TabIndex = 13;
             this.Annuler.Text = "Annuler";
             this.Annuler.UseVisualStyleBackColor = false;
+            this.Annuler.Click += new System.EventHandler(this.Annuler_Click);
             // 
             // Ajouter
             // 

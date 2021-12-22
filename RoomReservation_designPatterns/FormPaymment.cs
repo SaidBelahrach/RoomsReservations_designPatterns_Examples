@@ -60,6 +60,7 @@ namespace RoomReservation_designPatterns.Destop
             {
                 MessageBox.Show("Données incorrectes", "Error", MessageBoxButtons.OK,
                                  MessageBoxIcon.Error);
+                return;
             }
             Payment_Stategy ps = new Payment_Stategy(payment);
             if (ps.pay(amount))

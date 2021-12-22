@@ -6,7 +6,7 @@ namespace RoomReservation_designPatterns.Data.DataModels
 {
     public class Reservation
     {
-        public int id { get; set; }
+        public string id { get; set; }
         public DateTime dateDebut { get; set; }
         public DateTime dateFin { get; set; }
         public float amount { get; set; }
@@ -16,6 +16,7 @@ namespace RoomReservation_designPatterns.Data.DataModels
         public Hotel hotel= Hotel.GetInstance();
         public Reservation( Room room, DateTime dateDebut, DateTime dateFin)
         {
+            this.id = "R" + (new Random().Next(10000));
             this.client = Hotel.GetInstance().CurrentClient;
             this.room = room;
             this.dateDebut = dateDebut;
